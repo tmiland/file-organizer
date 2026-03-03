@@ -1,0 +1,13 @@
+[Unit]
+Description=File Organizer - Automatically organize downloaded files
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/%u/file-organizer.sh
+Restart=always
+RestartSec=10
+WorkingDirectory=/home/%u
+
+[Install]
+WantedBy=default.target
