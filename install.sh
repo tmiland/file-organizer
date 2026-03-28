@@ -16,13 +16,17 @@ if [ ! -f "file-organizer.service" ]; then
     exit 1
 fi
 
-# Copy the main script to home directory
-echo "Copying script to home directory..."
-cp file-organizer.sh ~/file-organizer.sh
-chmod +x ~/file-organizer.sh
+# Create install directory
+mkdir -p "$HOME"/.file-organizer
+INSTALL_DIR="$HOME"/.file-organizer
+
+# Copy the main script to install directory
+echo "Copying script to $INSTALL_DIR..."
+cp file-organizer.sh "$INSTALL_DIR"/file-organizer.sh
+chmod +x "$INSTALL_DIR"/file-organizer.sh
 
 # Verify the script is executable
-if [ ! -x ~/file-organizer.sh ]; then
+if [ ! -x "$INSTALL_DIR"/file-organizer.sh ]; then
     echo "Error: Could not make script executable"
     exit 1
 fi
@@ -43,7 +47,7 @@ systemctl --user enable file-organizer.service
 
 # Enable lingering (allows services to run without active login session)
 echo "Enabling user lingering..."
-loginctl enable-linger $USER 2>/dev/null || echo "Note: Could not enable lingering (may require sudo)"
+loginctl enable-linger "$USER" 2>/dev/null || echo "Note: Could not enable lingering (may require sudo)"
 
 # Start the service now
 systemctl --user start file-organizer.service

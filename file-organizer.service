@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /home/%u/file-organizer.sh
+ExecStart=/bin/bash /home/%u/.file-organizer/file-organizer.sh
 Restart=always
 RestartSec=10
-WorkingDirectory=/home/%u
+WorkingDirectory=/home/%u/.file-organizer
 
 [Install]
 WantedBy=default.target
