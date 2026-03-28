@@ -89,7 +89,7 @@ organize_file() {
         mv_arg="-n"
       fi
       mv "$mv_arg" "$filepath" "$dest/"
-      echo "[$(date '+%Y-%m-%d %H:%M:%S')] Moved: $filename -> $(basename "$dest")"
+      echo "[$(date '+%Y-%m-%d %H:%M:%S')] Moved: $filename -> $dest"
     fi
 }
 
