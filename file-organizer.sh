@@ -10,7 +10,7 @@ WATCH_INTERVAL=5  # Check every 5 seconds
 # Destination folders
 VIDEO_DIR="$HOME/Downloads/Video"
 AUDIO_DIR="$HOME/Downloads/Audio"
-IMAGES_DIR="$HOME/Downloads/Images"
+IMAGES_DIR="$HOME/Downloads/Pictures"
 DOCUMENTS_DIR="$HOME/Downloads/Documents"
 ARCHIVES_DIR="$HOME/Downloads/Archives"
 PROGRAMS_DIR="$HOME/Downloads/Programs"
