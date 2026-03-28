@@ -80,8 +80,16 @@ organize_file() {
     
     # Move the file
     if [ -f "$filepath" ]; then
-        mv "$filepath" "$dest/"
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Moved: $filename -> $(basename "$dest")"
+      if [ -f "$dest/$filename" ]; then
+        echo "$filename already exists... Making a backup"
+        # Use backup option
+        mv_arg="-b"
+      else
+        # Use do not overwrite option (just to make sure)
+        mv_arg="-n"
+      fi
+      mv "$mv_arg" "$filepath" "$dest/"
+      echo "[$(date '+%Y-%m-%d %H:%M:%S')] Moved: $filename -> $(basename "$dest")"
     fi
 }
 
