@@ -43,27 +43,27 @@ organize_file() {
     # Determine destination based on extension
     case "$extension" in
         # Video formats
-        mp4|mkv|avi|mov|wmv|flv|webm|m4v|mpg|mpeg)
+        mp4|mkv|avi|mov|wmv|flv|webm|m4v|mpg|mpeg|3gp|ts)
             dest="$VIDEO_DIR"
             ;;
         # Audio formats
-        mp3|wav|flac|aac|ogg|wma|m4a|opus)
+        mp3|wav|flac|aac|ogg|wma|m4a|opus|aiff)
             dest="$AUDIO_DIR"
             ;;
         # Image formats
-        jpg|jpeg|png|gif|bmp|svg|webp|ico|tiff)
+        jpg|jpeg|png|gif|bmp|svg|webp|ico|tiff|tif|heic|raw|psd)
             dest="$IMAGES_DIR"
             ;;
         # Document formats
-        pdf|doc|docx|txt|rtf|odt|xls|xlsx|ppt|pptx|csv)
+        pdf|doc|docx|txt|rtf|odt|xls|xlsx|ppt|pptx|csv|epub|pages)
             dest="$DOCUMENTS_DIR"
             ;;
         # Archive formats
-        zip|rar|7z|tar|gz|bz2|xz|tgz)
+        zip|rar|7z|tar|gz|bz2|xz|tgz|iso|dmg)
             dest="$ARCHIVES_DIR"
             ;;
         # Program/executable formats
-        exe|deb|rpm|appimage|dmg|pkg|apk)
+        exe|deb|rpm|appimage|pkg|apk|msi|bat|sh|jar|app|bin)
             dest="$PROGRAMS_DIR"
             ;;
         *)
