@@ -8,12 +8,12 @@ DOWNLOAD_DIR="$HOME/Downloads"
 WATCH_INTERVAL=5  # Check every 5 seconds
 
 # Destination folders
-VIDEO_DIR="$HOME/Downloads/Video"
-AUDIO_DIR="$HOME/Downloads/Audio"
-IMAGES_DIR="$HOME/Downloads/Pictures"
-DOCUMENTS_DIR="$HOME/Downloads/Documents"
-ARCHIVES_DIR="$HOME/Downloads/Archives"
-PROGRAMS_DIR="$HOME/Downloads/Programs"
+VIDEO_DIR="$HOME/Videos"
+AUDIO_DIR="$HOME/Audio"
+IMAGES_DIR="$HOME/Pictures"
+DOCUMENTS_DIR="$HOME/Documents"
+ARCHIVES_DIR="$HOME/Archives"
+PROGRAMS_DIR="$HOME/Programs"
 
 # Create destination folders if they don't exist
 mkdir -p "$VIDEO_DIR"
