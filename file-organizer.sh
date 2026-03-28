@@ -75,7 +75,7 @@ organize_file() {
             dest="$SCRIPT_DIR"
             ;;
         # Sequrity keys
-        pgp|gpg|asc)
+        pgp|gpg|asc|key)
             dest="$KEYS_DIR"
             ;;
         *)
