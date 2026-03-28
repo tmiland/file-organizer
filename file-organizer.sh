@@ -14,6 +14,7 @@ IMAGES_DIR="$HOME/Pictures"
 DOCUMENTS_DIR="$HOME/Documents"
 ARCHIVES_DIR="$HOME/Archives"
 PROGRAMS_DIR="$HOME/Programs"
+SCRIPT_DIR="$HOME/.scripts"
 
 # Create destination folders if they don't exist
 mkdir -p "$VIDEO_DIR"
@@ -22,6 +23,7 @@ mkdir -p "$IMAGES_DIR"
 mkdir -p "$DOCUMENTS_DIR"
 mkdir -p "$ARCHIVES_DIR"
 mkdir -p "$PROGRAMS_DIR"
+mkdir -p "$SCRIPT_DIR"
 
 # Function to get file extension in lowercase
 get_extension() {
@@ -63,8 +65,12 @@ organize_file() {
             dest="$ARCHIVES_DIR"
             ;;
         # Program/executable formats
-        exe|deb|rpm|appimage|pkg|apk|msi|bat|sh|jar|app|bin)
+        exe|deb|rpm|appimage|pkg|apk|msi|bat|jar|app|bin)
             dest="$PROGRAMS_DIR"
+            ;;
+        # Shell scripts
+        sh)
+            dest="$SCRIPT_DIR"
             ;;
         *)
             # Unknown format, don't move
